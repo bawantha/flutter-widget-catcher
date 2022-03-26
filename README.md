@@ -1,11 +1,11 @@
-# <img src="public/icons/icon_48.png" width="45" align="left"> Fwc
+# <img src="public/icons/icon_48.png" width="43" align="left"> Flutter Widget Catcher
 
-My Chrome Extension
+Easily Copy Flutter Widget from web...
 
 ## Features
+#
  
-- Feature 1
-- Feature 2
+- Right Click on a Flutter Widget and copy to clipboard
 
 ## Install
 [**Chrome** extension]()

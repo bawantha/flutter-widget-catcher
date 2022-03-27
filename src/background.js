@@ -13,7 +13,6 @@ chrome.runtime.onInstalled.addListener(function () {
 chrome.contextMenus.onClicked.addListener(function (item, tab) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
     chrome.tabs.sendMessage(tabs[0].id, {command: "CATCH",widget:item.selectionText}, function(response) {
-      console.log(response.status);
     });
   });
 });

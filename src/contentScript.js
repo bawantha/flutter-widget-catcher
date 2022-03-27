@@ -4,11 +4,7 @@ toast.id = 'fwcsnackbar';
 document.body.appendChild(toast);
 
 
-
-
-
-
-function myFunction(widget) {
+function showSnackBar(widget) {
   // Get the snackbar DIV
   var toast = document.getElementById("fwcsnackbar");
   toast.innerHTML="Copied "  +widget+"()" ;
@@ -60,8 +56,7 @@ chrome.runtime.onMessage.addListener(
   function(request, sender, sendResponse) {
     if (request.command === "CATCH"){
       snapSelectionToWord()
-      sendResponse({status:"DONE"})
-      myFunction(request.widget)
+      showSnackBar(request.widget)
     }
   }
 );

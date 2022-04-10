@@ -13,7 +13,7 @@ Flutter widget catcher is chrome extension that allows you to copy any widget in
 - Right Click on a Flutter Widget and copy to clipboard
 
 ## Install
-link:  https://chrome.google.com/webstore/de...
+link:  https://chrome.google.com/webstore/detail/flutter-widget-catcher/fmodefdejfdmjjlfdodklhkoichndcgg?hl=en&authuser=0
 
 ## Contribution
 

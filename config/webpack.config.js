@@ -11,6 +11,7 @@ const config = merge(common, {
     snackbar:PATHS.src+'/snackbar.css',
     contentScript: PATHS.src + '/contentScript.js',
     background: PATHS.src + '/background.js',
+    popup: PATHS.src + '/popup.js',
   },
 });
 

@@ -2,16 +2,74 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flutter Widget Catcher</title>
     <link rel="stylesheet" href="popup.css" />
 </head>
 <body>
   <div class="app">
-   <h2>Flutter Widget Catcher</h2>
-   <h3><code>0.1.0</code></h3>
-   <h4><code>this page is under development 😀</code></h4>
-   <a href="https://www.buymeacoffee.com/bawa" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important; width: 80%;"></a>
+    <div class="header">
+      <img src="icons/icon_48.png" alt="Flutter Widget Catcher" class="logo">
+      <div class="title-section">
+        <h1>Flutter Widget Catcher</h1>
+        <span class="version" id="version">v1.0.0</span>
+      </div>
+    </div>
+    
+    <div class="content">
+      <div class="feature-section">
+        <h3>🎯 How to Use</h3>
+        <ul class="feature-list">
+          <li><strong>Right-click</strong> on any Flutter widget text</li>
+          <li>Select <strong>"🎯 Catch Flutter Widget"</strong></li>
+          <li>Widget copied with proper brackets!</li>
+        </ul>
+      </div>
+      
+      <div class="shortcut-section">
+        <h3>⌨️ Keyboard Shortcut</h3>
+        <div class="shortcut-info">
+          <span class="shortcut-keys">
+            <span class="key">Ctrl</span> + <span class="key">Shift</span> + <span class="key">C</span>
+          </span>
+          <small class="shortcut-note">Cmd+Shift+C on Mac</small>
+        </div>
+      </div>
+      
+      <div class="stats-section">
+        <div class="stat-item">
+          <span class="stat-number" id="usage-count">0</span>
+          <span class="stat-label">Widgets Caught</span>
+        </div>
+      </div>
+      
+      <div class="actions">
+        <button id="test-btn" class="primary-btn">
+          <span class="btn-icon">🧪</span>
+          Test Extension
+        </button>
+        <button id="help-btn" class="secondary-btn">
+          <span class="btn-icon">❓</span>
+          Help & Support
+        </button>
+      </div>
+      
+      <div class="footer">
+        <div class="social-links">
+          <a href="https://github.com/your-username/flutter-widget-catcher" target="_blank" class="social-link">
+            <span class="social-icon">📱</span>
+            GitHub
+          </a>
+          <a href="https://www.buymeacoffee.com/bawa" target="_blank" class="social-link">
+            <span class="social-icon">☕</span>
+            Buy Coffee
+          </a>
+        </div>
+        <p class="copyright">Made with ❤️ for Flutter developers</p>
+      </div>
+    </div>
   </div>
-
+  
+  <script src="popup.js"></script>
 </body>
 </html>

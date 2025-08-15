@@ -1,8 +1,10 @@
 {
   "manifest_version": 3,
   "name": "Flutter Widget Catcher",
-  "version": "0.2.0",
-  "description": "Copy Flutter widget easily ...",
+  "version": "1.0.0",
+  "description": "Easily copy Flutter widgets with proper bracket matching. Right-click on any Flutter widget to copy it with all nested brackets intact.",
+  "author": "Flutter Widget Catcher Team",
+  "homepage_url": "https://github.com/your-username/flutter-widget-catcher",
   "icons": {
     "16": "icons/icon_16.png",
     "32": "icons/icon_32.png",
@@ -13,10 +15,14 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_title": "Flutter Widget Catcher",
+    "default_title": "Flutter Widget Catcher - Click for help",
     "default_popup": "popup.html"
   },
-  "permissions": ["contextMenus", "tabs"],
+  "permissions": [
+    "contextMenus", 
+    "tabs",
+    "notifications"
+  ],
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -24,5 +30,15 @@
       "js": ["contentScript.js"],
       "css": ["snackbar.css"]
     }
-  ]
+  ],
+  "commands": {
+    "catch-widget": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+C",
+        "mac": "Command+Shift+C"
+      },
+      "description": "Catch Flutter widget from selection"
+    }
+  },
+  "minimum_chrome_version": "88"
 }

@@ -140,7 +140,6 @@ jobs:
     
     environment:
       name: production
-      url: https://chrome.google.com/webstore/detail/${{ secrets.CHROME_EXTENSION_ID_PROD }}
     
     steps:
     - name: Checkout code
@@ -171,12 +170,12 @@ jobs:
       run: npm run release
       
     - name: Create GitHub Release
-      uses: actions/create-release@v1
+      uses: softprops/action-gh-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        tag_name: ${{ github.ref_name }}
+        name: Release ${{ github.ref_name }}
         body: |
           Changes in this Release:
           - Improved Flutter widget catching with better bracket matching
@@ -186,16 +185,7 @@ jobs:
           - Performance improvements
         draft: false
         prerelease: false
-        
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./build/flutter-widget-catcher-extension.zip
-        asset_name: flutter-widget-catcher-extension.zip
-        asset_content_type: application/zip
+        files: ./build/flutter-widget-catcher-extension.zip
 
   notify:
     name: Notify Deployment
@@ -205,7 +195,7 @@ jobs:
     
     steps:
     - name: Notify Slack
-      if: ${{ secrets.SLACK_WEBHOOK_URL }}
+      if: ${{ secrets.SLACK_WEBHOOK_URL != '' }}
       uses: 8398a7/action-slack@v3
       with:
         status: ${{ job.status }}
@@ -213,9 +203,9 @@ jobs:
         webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
         
     - name: Notify Discord
-      if: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      if: ${{ secrets.DISCORD_WEBHOOK_URL != '' }}
       uses: Ilshidur/action-discord@master
       env:
         DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_URL }}
       with:
-        args: 'Flutter Widget Catcher extension v${{ github.ref }} has been deployed! 🚀' 
+        args: 'Flutter Widget Catcher extension v${{ github.ref_name }} has been deployed! 🚀' 
